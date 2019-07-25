@@ -56,46 +56,12 @@ var providerGitlab = Provider{
 			return model.UserInfo{}, "", fmt.Errorf("error parsing gitlab get user info: %v", err)
 		}
 
-		gg := []*GitlabGroup{}
-		url = fmt.Sprintf("%v/groups?access_token=%v", InfoURL, token.AccessToken)
-
-		var respGroup *http.Response
-		respGroup, err = http.Get(url)
-		if err != nil {
-			return model.UserInfo{}, "", err
-		}
-		defer respGroup.Body.Close()
-
-		if !strings.Contains(respGroup.Header.Get("Content-Type"), "application/json") {
-			return model.UserInfo{}, "", fmt.Errorf("wrong content-type on gitlab get groups info: %v", respGroup.Header.Get("Content-Type"))
-		}
-
-		if respGroup.StatusCode != 200 {
-			return model.UserInfo{}, "", fmt.Errorf("got http status %v on gitlab get groups info", respGroup.StatusCode)
-		}
-
-		g, err := ioutil.ReadAll(respGroup.Body)
-		if err != nil {
-			return model.UserInfo{}, "", fmt.Errorf("error reading gitlab get groups info: %v", err)
-		}
-
-		err = json.Unmarshal(g, &gg)
-		if err != nil {
-			return model.UserInfo{}, "", fmt.Errorf("error parsing gitlab get groups info: %v", err)
-		}
-
-		groups := make([]string, len(gg))
-		for i := 0; i < len(gg); i++ {
-			groups[i] = gg[i].FullPath
-		}
-
 		return model.UserInfo{
 			Sub:     gu.Username,
 			Picture: gu.AvatarURL,
 			Name:    gu.Name,
 			Email:   gu.Email,
-			Groups:  groups,
 			Origin:  "gitlab",
-		}, `{"user":` + string(b) + `,"groups":` + string(g) + `}`, nil
+		}, `{"user":` + string(b) + `}`, nil
 	},
 }
