@@ -31,6 +31,9 @@ type Config struct {
 	// The url for token exchange
 	TokenURL string
 
+	// The url for token info
+	InfoURL string
+
 	// RedirectURL is the URL to redirect users going through
 	// the OAuth flow, after the resource owner's URLs.
 	RedirectURI string
