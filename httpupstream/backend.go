@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/tarent/loginsrv/login"
-	"github.com/tarent/loginsrv/model"
+	"github.com/rodriguesdossantosvincent/loginsrv/login"
+	"github.com/rodriguesdossantosvincent/loginsrv/model"
 )
 
 // ProviderName const

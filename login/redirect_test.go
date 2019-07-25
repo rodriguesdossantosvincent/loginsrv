@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	. "github.com/stretchr/testify/assert"
-	"github.com/tarent/loginsrv/oauth2"
+	"github.com/rodriguesdossantosvincent/loginsrv/oauth2"
 	"io/ioutil"
 )
 

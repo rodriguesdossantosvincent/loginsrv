@@ -13,8 +13,8 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/tarent/lib-compose v0.0.0-20170829113806-69430f91d1d6 h1:EdRyqD9aAKam90IDujb6wtPsOV4JG79ZxkZE01DUA3M=
 github.com/tarent/lib-compose v0.0.0-20170829113806-69430f91d1d6/go.mod h1:mqxWNjaOgpyafkwOVyRkP/PIL+RN8phVEf4sjP8yW6c=
-github.com/tarent/loginsrv v1.3.0 h1:u6jx/VZcRNOsmj7hQT4xFNrYDXs/kMmFWWINKZwQgFo=
-github.com/tarent/loginsrv v1.3.0/go.mod h1:TC5/uTgxTU8dfgc2NtJeDr6bc7LX9k17ocgCfjGjiGs=
+github.com/rodriguesdossantosvincent/loginsrv v1.3.0 h1:u6jx/VZcRNOsmj7hQT4xFNrYDXs/kMmFWWINKZwQgFo=
+github.com/rodriguesdossantosvincent/loginsrv v1.3.0/go.mod h1:TC5/uTgxTU8dfgc2NtJeDr6bc7LX9k17ocgCfjGjiGs=
 github.com/tarent/logrus v0.11.5 h1:6Ecuym2kpXpZURcyYKm7K5IQ1AZGK2hye7auueNyEtE=
 github.com/tarent/logrus v0.11.5/go.mod h1:ql8ihK/sxurTyP1LVhkGrMHhl0aXd/+hu4MBiAJDFN4=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=

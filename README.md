@@ -2,11 +2,11 @@
 
 loginsrv is a standalone minimalistic login server providing a [JWT](https://jwt.io/) login for multiple login backends.
 
-[![Docker](https://img.shields.io/docker/pulls/tarent/loginsrv.svg)](https://hub.docker.com/r/tarent/loginsrv/)
-[![Build Status](https://api.travis-ci.org/tarent/loginsrv.svg?branch=master)](https://travis-ci.org/tarent/loginsrv)
-[![Go Report Card](https://goreportcard.com/badge/github.com/tarent/loginsrv)](https://goreportcard.com/report/github.com/tarent/loginsrv)
-[![Coverage Status](https://coveralls.io/repos/github/tarent/loginsrv/badge.svg?branch=master)](https://coveralls.io/github/tarent/loginsrv?branch=master)
-[![Join the chat at https://gitter.im/tarent/loginsrv](https://badges.gitter.im/tarent/loginsrv.svg)](https://gitter.im/tarent/loginsrv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Docker](https://img.shields.io/docker/pulls/rodriguesdossantosvincent/loginsrv.svg)](https://hub.docker.com/r/rodriguesdossantosvincent/loginsrv/)
+[![Build Status](https://api.travis-ci.org/rodriguesdossantosvincent/loginsrv.svg?branch=master)](https://travis-ci.org/rodriguesdossantosvincent/loginsrv)
+[![Go Report Card](https://goreportcard.com/badge/github.com/rodriguesdossantosvincent/loginsrv)](https://goreportcard.com/report/github.com/rodriguesdossantosvincent/loginsrv)
+[![Coverage Status](https://coveralls.io/repos/github/rodriguesdossantosvincent/loginsrv/badge.svg?branch=master)](https://coveralls.io/github/rodriguesdossantosvincent/loginsrv?branch=master)
+[![Join the chat at https://gitter.im/rodriguesdossantosvincent/loginsrv](https://badges.gitter.im/rodriguesdossantosvincent/loginsrv.svg)](https://gitter.im/rodriguesdossantosvincent/loginsrv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 __** Attention: Update to v1.3.0 for Google Login Update !!!! **__
@@ -47,9 +47,9 @@ The following providers (login backends) are supported.
 
 ## Questions
 
-For questions and support please use the [Gitter chat room](https://gitter.im/tarent/loginsrv).
+For questions and support please use the [Gitter chat room](https://gitter.im/rodriguesdossantosvincent/loginsrv).
 
-[![Join the chat at https://gitter.im/tarent/loginsrv](https://badges.gitter.im/tarent/loginsrv.svg)](https://gitter.im/tarent/loginsrv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/rodriguesdossantosvincent/loginsrv](https://badges.gitter.im/rodriguesdossantosvincent/loginsrv.svg)](https://gitter.im/rodriguesdossantosvincent/loginsrv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Configuration and Startup
 ### Config Options
@@ -102,7 +102,7 @@ So e.g. `jwt-secret` can be set by environment variable `LOGINSRV_JWT_SECRET`.
 The simplest way to use loginsrv is by the provided docker container.
 E.g. configured with the simple provider:
 ```
-$ docker run -d -p 8080:8080 tarent/loginsrv -cookie-secure=false -jwt-secret my_secret -simple bob=secret
+$ docker run -d -p 8080:8080 rodriguesdossantosvincent/loginsrv -cookie-secure=false -jwt-secret my_secret -simple bob=secret
 
 $ curl --data "username=bob&password=secret" 127.0.0.1:8080/login
 eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2IifQ.uWoJkSXTLA_RvfLKe12pb4CyxQNxe5_Ovw-N5wfQwkzXz2enbhA9JZf8MmTp9n-TTDcWdY3Fd1SA72_M20G9lQ
@@ -110,7 +110,7 @@ eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2IifQ.uWoJkSXTLA_RvfLKe12pb4Cy
 
 The same configuration could be written with environment variables this way:
 ```
-$ docker run -d -p 8080:8080 -E COOKIE_SECURE=false -e LOGINSRV_JWT_SECRET=my_secret -e LOGINSRV_BACKEND=provider=simple,bob=secret tarent/loginsrv
+$ docker run -d -p 8080:8080 -E COOKIE_SECURE=false -e LOGINSRV_JWT_SECRET=my_secret -e LOGINSRV_BACKEND=provider=simple,bob=secret rodriguesdossantosvincent/loginsrv
 ```
 
 ## API
@@ -120,7 +120,7 @@ $ docker run -d -p 8080:8080 -E COOKIE_SECURE=false -e LOGINSRV_JWT_SECRET=my_se
 Per default, it returns a simple bootstrap styled login form for unauthenticated requests and a page with user info for authenticated requests.
 When the call accepts a JSON output, the json content of the token is returned to authenticated requests.
 
-The returned HTML follows the UI composition conventions from (lib-compose)[https://github.com/tarent/lib-compose],
+The returned HTML follows the UI composition conventions from (lib-compose)[https://github.com/rodriguesdossantosvincent/lib-compose],
 so it can be embedded into an existing layout.
 
 | Parameter-Type    | Parameter                                        | Description                                                       |              | 
@@ -330,13 +330,13 @@ if loginsrv is routed through a reverse proxy, if the headers `X-Forwarded-Host`
 
 ### GitHub Startup Example
 ```
-$ docker run -p 80:80 tarent/loginsrv -github client_id=xxx,client_secret=yyy
+$ docker run -p 80:80 rodriguesdossantosvincent/loginsrv -github client_id=xxx,client_secret=yyy
 ```
 
 ## Templating
 
 A custom template can be supplied by the parameter `template`. 
-You can find the original template in [login/login_form.go](https://github.com/tarent/loginsrv/blob/master/login/login_form.go).
+You can find the original template in [login/login_form.go](https://github.com/rodriguesdossantosvincent/loginsrv/blob/master/login/login_form.go).
 
 The templating uses the Golang template package. A short intro can be found [here](https://astaxie.gitbooks.io/build-web-application-with-golang/en/07.4.html).
 
