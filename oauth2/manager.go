@@ -95,7 +95,7 @@ func (manager *Manager) AddConfig(providerName string, opts map[string]string) e
 	}
 
 	cfg := Config{
-		Provider: p
+		Provider: p,
 	}
 	
 	authURL, exist := opts["auth_url"]
