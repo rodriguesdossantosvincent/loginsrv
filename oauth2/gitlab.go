@@ -29,7 +29,7 @@ var providerGitlab = Provider{
 	Name:     "gitlab",
 	GetUserInfo: func(token TokenInfo, InfoURL string) (model.UserInfo, string, error) {
 		gu := GitlabUser{}
-		url := fmt.Sprintf("%v/user?access_token=%v", gitlabAPI, token.AccessToken)
+		url := fmt.Sprintf("%v/user?access_token=%v", InfoURL, token.AccessToken)
 
 		var respUser *http.Response
 		respUser, err := http.Get(url)
@@ -57,7 +57,7 @@ var providerGitlab = Provider{
 		}
 
 		gg := []*GitlabGroup{}
-		url = fmt.Sprintf("%v/groups?access_token=%v", gitlabAPI, token.AccessToken)
+		url = fmt.Sprintf("%v/groups?access_token=%v", InfoURL, token.AccessToken)
 
 		var respGroup *http.Response
 		respGroup, err = http.Get(url)
