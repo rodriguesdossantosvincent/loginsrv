@@ -95,10 +95,29 @@ func (manager *Manager) AddConfig(providerName string, opts map[string]string) e
 	}
 
 	cfg := Config{
-		Provider: p,
-		AuthURL:  p.AuthURL,
-		TokenURL: p.TokenURL,
+		Provider: p
 	}
+	
+	authURL, exist := opts["auth_url"]
+	if !exist {
+		return fmt.Errorf("missing parameter auth_url")
+	}
+	cfg.AuthURL = authURL
+  	p.AuthURL = authURL
+
+	tokenURL, exist := opts["token_url"]
+	if !exist {
+		return fmt.Errorf("missing parameter token_url")
+	}
+	cfg.TokenURL = tokenURL
+  	p.TokenURL = tokenURL
+
+	infoURL, exist := opts["info_url"]
+	if !exist {
+		return fmt.Errorf("missing parameter info_url")
+	}
+	cfg.InfoURL = infoURL
+  	p.InfoURL = infoURL
 
 	clientID, exist := opts["client_id"]
 	if !exist {
