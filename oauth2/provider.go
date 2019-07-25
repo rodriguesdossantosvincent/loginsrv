@@ -14,6 +14,8 @@ type Provider struct {
 
 	// The url for token exchange
 	TokenURL string
+	
+	InfoURL string
 
 	// Default Scopes is a space separated list of oauth scopes to use for this provider.
 	// This list can be overwritten by configuration.
@@ -23,7 +25,7 @@ type Provider struct {
 	// for fetching the user information.
 	// Possible keys in the returned map are:
 	// username, email, name
-	GetUserInfo func(token TokenInfo) (u model.UserInfo, rawUserJson string, err error)
+	GetUserInfo func(token TokenInfo, InfoURL string) (u model.UserInfo, rawUserJson string, err error)
 }
 
 var provider = map[string]Provider{}

@@ -27,7 +27,7 @@ type GitlabGroup struct {
 
 var providerGitlab = Provider{
 	Name:     "gitlab",
-	GetUserInfo: func(token TokenInfo) (model.UserInfo, string, error) {
+	GetUserInfo: func(token TokenInfo, InfoURL string) (model.UserInfo, string, error) {
 		gu := GitlabUser{}
 		url := fmt.Sprintf("%v/user?access_token=%v", gitlabAPI, token.AccessToken)
 
